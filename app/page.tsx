@@ -385,7 +385,10 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-base md:text-lg py-3 md:py-4 rounded-lg font-bold shadow-lg">
+                <Button
+                  onClick={() => window.open("https://go.pepperpay.com.br/r51ok", "_blank")}
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-base md:text-lg py-3 md:py-4 rounded-lg font-bold shadow-lg"
+                >
                   <Download className="mr-2 h-4 md:h-5 w-4 md:w-5" />
                   QUERO AGORA POR R$ 9,97
                 </Button>
