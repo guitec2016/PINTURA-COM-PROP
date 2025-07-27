@@ -18,10 +18,12 @@ import {
   ChevronRight,
 } from "lucide-react"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function LandingPage() {
   const [currentFeedback, setCurrentFeedback] = useState(0)
+  const [showNotification, setShowNotification] = useState(false)
+  const [currentCustomer, setCurrentCustomer] = useState("")
 
   const feedbacks = [
     { img: "/feedback1.jpg", alt: "Feedback cliente 1" },
@@ -32,6 +34,49 @@ export default function LandingPage() {
     { img: "/feedback6.jpg", alt: "Feedback cliente 6" },
     { img: "/feedback7.jpg", alt: "Feedback cliente 7" },
   ]
+
+  const customerNames = [
+    "Marcia",
+    "Ana Paula",
+    "Carla",
+    "Fernanda",
+    "Juliana",
+    "Patricia",
+    "Luciana",
+    "Daniela",
+    "Renata",
+    "Claudia",
+    "Vanessa",
+    "Simone",
+    "Adriana",
+    "Cristina",
+    "Monica",
+  ]
+
+  useEffect(() => {
+    const showNotificationInterval = () => {
+      // Random interval between 8-15 seconds
+      const randomInterval = Math.random() * 7000 + 8000
+
+      setTimeout(() => {
+        // Pick random customer name
+        const randomName = customerNames[Math.floor(Math.random() * customerNames.length)]
+        setCurrentCustomer(randomName)
+        setShowNotification(true)
+
+        // Hide after 4 seconds
+        setTimeout(() => {
+          setShowNotification(false)
+        }, 4000)
+
+        // Schedule next notification
+        showNotificationInterval()
+      }, randomInterval)
+    }
+
+    // Start the cycle after 5 seconds
+    setTimeout(showNotificationInterval, 5000)
+  }, [])
 
   const scrollToOffer = () => {
     const offerSection = document.getElementById("offer-section")
@@ -469,6 +514,19 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Social Proof Notification */}
+      {showNotification && (
+        <div className="fixed bottom-4 left-4 z-50 animate-in slide-in-from-left duration-500">
+          <div className="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 max-w-xs">
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <div>
+              <p className="text-sm font-semibold">{currentCustomer} acabou de comprar</p>
+              <p className="text-xs opacity-90">Momentos com Jesus</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-6">
