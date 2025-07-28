@@ -16,6 +16,8 @@ import {
   Zap,
   ChevronLeft,
   ChevronRight,
+  Shield,
+  Lock,
 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -97,16 +99,16 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 shadow-lg">
-        <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-center gap-3">
+        <div className="container mx-auto px-4 py-1">
+          <div className="flex items-center justify-center gap-2">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20250722_0237_Pintura%20com%20Prop%C3%B3sito_simple_compose_01k0ra426gezyv4zzk5j9gm5gm-4NH33hKMjMRNO6HZfCFi3vVvfOr1ux.png"
               alt="Pintura com Propósito Logo"
-              width={60}
-              height={60}
+              width={40}
+              height={40}
               className="rounded-full bg-white/20 p-1"
             />
-            <span className="text-xl font-bold text-white">PINTURA COM PROPÓSITO</span>
+            <span className="text-sm md:text-lg font-bold text-white">PINTURA COM PROPÓSITO</span>
           </div>
         </div>
       </header>
@@ -115,7 +117,7 @@ export default function LandingPage() {
       <section className="py-8 md:py-12 bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <Badge className="mb-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 text-sm font-bold">
+            <Badge className="mb-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-4 py-2 text-sm font-bold">
               🔥 ESTILO BOBBIE GOODS CRISTÃO
             </Badge>
             <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
@@ -161,15 +163,17 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">Por que escolher nosso material? 💖</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-4 px-2">
+                Por que escolher nosso material? 💖
+              </h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center mb-8">
-              <div>
-                <p className="text-sm md:text-base text-gray-600 mb-4">
+              <div className="px-2">
+                <p className="text-base md:text-lg text-gray-700 mb-6 font-semibold">
                   📚 Coleção exclusiva com cenas que retratam Jesus com as crianças em momentos simples:
                 </p>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {[
                     "Tomando café da manhã ☕",
                     "Indo à escola 🎒",
@@ -177,9 +181,9 @@ export default function LandingPage() {
                     "Ajudando nas tarefas 🧹",
                     "No consultório do dentista! 😁",
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs md:text-sm text-gray-700">{item}</span>
+                    <div key={index} className="flex items-center gap-3 p-2 bg-green-50 rounded-lg">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <span className="text-sm md:text-base text-gray-800 font-medium">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -395,25 +399,25 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="offer-section" className="py-8 md:py-12 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-400">
+      <section id="offer-section" className="py-8 md:py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-xl md:text-3xl font-bold mb-6 text-white">🙌 OFERTA ESPECIAL</h2>
+            <h2 className="text-xl md:text-3xl font-bold mb-6 text-yellow-300">👑 Pacote Premium</h2>
 
             <Card className="border-4 border-yellow-400 shadow-2xl bg-white relative">
               <CardContent className="p-4 md:p-6">
-                <Badge className="bg-red-500 text-white px-3 md:px-4 py-2 text-xs md:text-sm mb-4 animate-bounce">
+                <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 md:px-4 py-2 text-xs md:text-sm mb-4 animate-bounce">
                   ⏰ ÚLTIMAS HORAS
                 </Badge>
                 <div className="flex items-center justify-center gap-3 mb-4">
-                  <span className="text-lg md:text-xl text-orange-400 line-through">R$ 47,00</span>
+                  <span className="text-lg md:text-xl text-orange-500 line-through font-bold">R$ 47,00</span>
                   <span className="text-3xl md:text-4xl font-bold text-green-600">R$ 9,97</span>
                 </div>
-                <p className="text-sm md:text-base text-gray-600 font-semibold mb-6">Desconto de 79%!</p>
+                <p className="text-sm md:text-base font-bold mb-6 text-orange-500">Desconto de 79%!</p>
 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 md:p-4 mb-6">
                   <h3 className="text-sm md:text-base font-bold text-center mb-3 text-gray-800">🎁 VOCÊ RECEBE:</h3>
-                  <div className="space-y-2 text-left text-xs md:text-sm">
+                  <div className="space-y-3 text-left text-sm md:text-base">
                     {[
                       "✅ +30 Desenhos Momentos com Jesus",
                       "✅ +31 Desenhos Personagens Bíblicos",
@@ -422,9 +426,12 @@ export default function LandingPage() {
                       "✅ Acesso imediato por email e WhatsApp",
                       "✅ Garantia de 7 dias",
                     ].map((item, index) => (
-                      <div key={index} className="flex items-start gap-2">
-                        <span className="text-green-500 font-bold">✅</span>
-                        <span className="text-gray-700">{item}</span>
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 p-2 bg-white rounded-lg border border-yellow-200"
+                      >
+                        <span className="text-green-500 font-bold text-lg">✅</span>
+                        <span className="text-gray-800 font-medium">{item.substring(2)}</span>
                       </div>
                     ))}
                   </div>
@@ -432,10 +439,10 @@ export default function LandingPage() {
 
                 <Button
                   onClick={() => window.open("https://go.pepperpay.com.br/r51ok", "_blank")}
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-base md:text-lg py-3 md:py-4 rounded-lg font-bold shadow-lg"
+                  className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white text-base md:text-lg py-3 md:py-4 rounded-lg font-bold shadow-lg animate-bounce hover:animate-none transform hover:scale-105 transition-all duration-300"
                 >
                   <Download className="mr-2 h-4 md:h-5 w-4 md:w-5" />
-                  QUERO AGORA POR R$ 9,97
+                  QUERO O PACOTE PREMIUM
                 </Button>
 
                 <div className="flex items-center justify-center gap-2 md:gap-4 mt-4 text-xs text-gray-600">
@@ -453,7 +460,7 @@ export default function LandingPage() {
 
             {/* 7-Day Guarantee Badge - Now Below the Card */}
             <div className="mt-6 flex justify-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/30 flex items-center gap-3">
+              <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl p-3 md:p-4 border-2 border-blue-300 flex items-center gap-3">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/md-sk873-ll15png-6ILT6pfq8le5JsFbWg22e7e4zvBFAG.webp"
                   alt="Garantia de 7 dias"
@@ -461,9 +468,9 @@ export default function LandingPage() {
                   height={60}
                   className="animate-pulse w-12 md:w-15"
                 />
-                <div className="text-white text-left">
+                <div className="text-gray-800 text-left">
                   <p className="font-bold text-sm md:text-lg">Garantia de 7 Dias</p>
-                  <p className="text-xs md:text-sm opacity-90">Satisfação garantida ou seu dinheiro de volta</p>
+                  <p className="text-xs md:text-sm opacity-70">Satisfação garantida ou seu dinheiro de volta</p>
                 </div>
               </div>
             </div>
@@ -479,7 +486,7 @@ export default function LandingPage() {
               <h2 className="text-xl md:text-2xl font-bold text-gray-800">Dúvidas Frequentes</h2>
             </div>
 
-            <Card className="shadow-lg border-2 border-purple-300">
+            <Card className="shadow-lg border-2 border-purple-300 mb-8">
               <CardContent className="p-3 md:p-4">
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1">
@@ -511,6 +518,28 @@ export default function LandingPage() {
                 </Accordion>
               </CardContent>
             </Card>
+
+            {/* CTA Button after FAQ */}
+            <div className="text-center">
+              <Button
+                onClick={scrollToOffer}
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 text-base md:text-lg mb-4"
+              >
+                TIREI MINHAS DÚVIDAS, QUERO COMPRAR
+              </Button>
+
+              {/* Security Badges */}
+              <div className="flex items-center justify-center gap-4 md:gap-6 text-xs md:text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <Shield className="h-4 w-4 text-green-500" />
+                  <span>Pagamento Seguro</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Lock className="h-4 w-4 text-blue-500" />
+                  <span>SSL Protegido</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
